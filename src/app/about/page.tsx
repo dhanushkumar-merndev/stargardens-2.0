@@ -1,0 +1,268 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check, MapPin, Sprout, ShieldCheck, Award, Users, ArrowUpRight } from "lucide-react";
+import { nurseriesData, studioFacts } from "@/data/nurseries";
+import ContourSvg from "@/components/ContourSvg";
+
+export const metadata = {
+  title: "About the Studio | Star Gardens — Landscape Architecture & Horticulture",
+  description: "Star Gardens is a landscape architecture and design practice established in 2009 in Bengaluru. Rooted in multi-generational farming with 70 acres of production nurseries.",
+};
+
+export default function AboutPage() {
+  return (
+    <div className="pt-24 pb-20 bg-white text-[#121814]">
+      {/* Editorial Header */}
+      <section className="relative py-20 sm:py-28 border-b border-[#E5EBE6] bg-[#F8FAF7] overflow-hidden">
+        {/* Subtle Contour Background */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <ContourSvg className="w-full h-full" />
+        </div>
+        <div className="absolute inset-0 arch-grid-mosaic pointer-events-none opacity-30" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-6">
+            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-[#121814] font-normal leading-[1.1] tracking-tight">
+              Growers, horticulturists, <span className="italic text-[#193D2B]">architects</span>.
+            </h1>
+            <p className="text-base sm:text-xl text-[#475E50] font-light leading-relaxed">
+              Star Gardens hails from a family of growers who have cultivated plants across South India since 2009. We understand both the architectural geometry of built space and the biological reality of living soil.
+            </p>
+          </div>
+          {/* Rectangular Practice Hero Screen - Mobile-first layout with content right below */}
+          <div className="mt-8 sm:mt-12 scroll-reveal">
+            <div className="relative aspect-[16/10] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-[#D4DFD7] shadow-xl">
+              <Image
+                src="/images/pages/about-hero.jpg"
+                alt="Star Gardens 70-acre production nursery and cultivation farmlands in South India"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 right-3 text-white">
+                <span className="inline-block text-[10px] sm:text-xs font-mono uppercase tracking-wider bg-white/95 text-[#193D2B] font-bold px-3 py-1.5 rounded-full backdrop-blur-xs shadow-2xs">
+                  70 Acres Cultivation Farmlands · Native Deccan & Tropical Stock
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story & Philosophy Split - Image on top on mobile, content right below */}
+      <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Rectangular Cultivation Image - On Mobile Placed on Top */}
+          <div className="w-full lg:col-span-6 relative order-first lg:order-last">
+            <div className="interactive-card scroll-reveal delay-150 relative aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-[#E5EBE6]">
+              <Image
+                src="/images/nursery/tropical-foliage-cultivation.jpg"
+                alt="Tropical foliage cultivation at Star Gardens nursery"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            </div>
+            {/* Quote Badge: In-flow on mobile, floating on desktop */}
+            <div className="mt-3 sm:mt-0 sm:absolute sm:-bottom-6 sm:-left-6 bg-white border border-[#193D2B] text-[#121814] p-4 sm:p-5 rounded-2xl max-w-sm sm:max-w-xs shadow-md z-20 scroll-reveal delay-250">
+              <p className="font-serif italic text-sm sm:text-base text-[#193D2B]">
+                "A design should never wait on an external supplier."
+              </p>
+              <span className="text-[10px] sm:text-[11px] font-mono text-[#718579] mt-1 block">
+                — Star Gardens Cultivation Principle
+              </span>
+            </div>
+          </div>
+
+          {/* Philosophy Text - Right Below on Mobile */}
+          <div className="w-full lg:col-span-6 space-y-6 scroll-reveal">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#193D2B]">
+              LIVING LANDSCAPE PHILOSOPHY
+            </span>
+            <h2 className="font-serif text-2xl sm:text-5xl text-[#121814] font-normal leading-snug">
+              Why an architect who also farms builds better landscapes.
+            </h2>
+            <div className="space-y-4 text-xs sm:text-base text-[#475E50] leading-relaxed">
+              <p>
+                Most landscape contractors operate as brokers, procuring saplings from third-party nurseries that struggle to adapt to new microclimates.
+              </p>
+              <p>
+                Star Gardens was founded on a generational farming lineage. With 70 acres of production farmland across South India, our architects specify specimens that are cultivated, acclimatized, and maintained by the same horticultural team.
+              </p>
+            </div>
+
+            <div className="pt-2 grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="stat-card-hover scroll-reveal p-4 sm:p-5 bg-[#F8FAF7] border border-[#E5EBE6] rounded-2xl shadow-2xs">
+                <span className="font-serif text-2xl sm:text-4xl text-[#193D2B] block font-bold">15+</span>
+                <span className="text-[10px] sm:text-xs text-[#718579] font-mono">YEARS IN PRACTICE</span>
+              </div>
+              <div className="stat-card-hover scroll-reveal delay-100 p-4 sm:p-5 bg-[#F8FAF7] border border-[#E5EBE6] rounded-2xl shadow-2xs">
+                <span className="font-serif text-2xl sm:text-4xl text-[#193D2B] block font-bold">70</span>
+                <span className="text-[10px] sm:text-xs text-[#718579] font-mono">ACRES FARMLAND</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4 Nursery Farmlands Detailed Breakdown */}
+      <section className="py-14 sm:py-24 bg-[#F8FAF7] border-y border-[#E5EBE6]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-10 sm:mb-14 space-y-3 scroll-reveal">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#193D2B]">
+              CULTIVATION INFRASTRUCTURE
+            </span>
+            <h2 className="font-serif text-2xl sm:text-5xl text-[#121814] font-normal">
+              70 Acres across 4 strategic microclimates.
+            </h2>
+            <p className="text-xs sm:text-base text-[#475E50]">
+              Each facility is chosen for its unique soil chemistry, altitude, and climatic conditions to cultivate specific botanical classes.
+            </p>
+          </div>
+
+          <div className="space-y-6 sm:space-y-8">
+            {nurseriesData.map((nur, idx) => (
+              <div
+                key={nur.id}
+                className="interactive-card scroll-reveal flex flex-col lg:grid lg:grid-cols-12 gap-6 sm:gap-8 items-center bg-white border border-[#E5EBE6] rounded-2xl p-5 sm:p-8 shadow-md"
+              >
+                {/* Rectangular Farmland Image on Top for Mobile */}
+                <div className="w-full lg:col-span-5 relative aspect-[16/10] rounded-xl overflow-hidden border border-[#E5EBE6]">
+                  <Image
+                    src={nur.image}
+                    alt={nur.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                  <div className="absolute top-3 right-3 bg-white/95 border border-[#D4DFD7] text-[#193D2B] text-xs font-mono px-3 py-1 rounded-full backdrop-blur-xs font-semibold shadow-2xs">
+                    {nur.acreage} ACRES
+                  </div>
+                </div>
+
+                <div className="w-full lg:col-span-7 space-y-3 sm:space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono uppercase text-[#193D2B] font-semibold">
+                      Location 0{idx + 1} · {nur.state}
+                    </span>
+                    <span className="text-xs font-mono text-[#718579]">
+                      Established {nur.established}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-xl sm:text-3xl text-[#121814]">
+                    {nur.name}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#475E50] leading-relaxed">
+                    {nur.focus}
+                  </p>
+
+                  <div className="p-3 bg-[#F8FAF7] border border-[#E5EBE6] rounded-xl text-xs text-[#475E50]">
+                    <strong className="text-[#193D2B]">Soil & Microclimate:</strong> {nur.soilAndClimate}
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-mono uppercase tracking-wider text-[#193D2B] mb-2 font-semibold">
+                      Key Botanical Specializations:
+                    </h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#475E50]">
+                      {nur.keySpecialties.map((spec, sIdx) => (
+                        <div key={sIdx} className="flex items-start gap-1.5">
+                          <Check className="w-3.5 h-3.5 text-[#193D2B] shrink-0 mt-0.5" />
+                          <span>{spec}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The In-House Crew & Gardeners - Mobile-first image on top, content below */}
+      <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Rectangular Crew Image Screen - Placed on Top on Mobile */}
+          <div className="w-full lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 scroll-reveal-right delay-150 order-first lg:order-last">
+            <div className="relative aspect-[16/10] sm:aspect-[3/4] rounded-2xl overflow-hidden border border-[#E5EBE6] shadow-md">
+              <Image
+                src="/images/amc/gardener-servicing-office-planters.jpg"
+                alt="Star Gardens gardener maintaining office planter"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute bottom-2.5 left-3 text-[10px] font-mono uppercase text-white bg-black/60 px-3 py-1 rounded-full backdrop-blur-xs">
+                Uniformed AMC Technicians
+              </div>
+            </div>
+            <div className="relative aspect-[16/10] sm:aspect-[3/4] rounded-2xl overflow-hidden border border-[#E5EBE6] shadow-md sm:mt-8">
+              <Image
+                src="/images/amc/team-member-horticulture-watering.jpg"
+                alt="Star Gardens horticultural specialist inspecting foliage"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute bottom-2.5 left-3 text-[10px] font-mono uppercase text-white bg-black/60 px-3 py-1 rounded-full backdrop-blur-xs">
+                Soil Moisture Telemetry
+              </div>
+            </div>
+          </div>
+
+          {/* Crew Narrative - Placed Right Below on Mobile */}
+          <div className="w-full lg:col-span-6 space-y-5 sm:space-y-6 scroll-reveal">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#193D2B]">
+              ACCOUNTABILITY ON SITE
+            </span>
+            <h2 className="font-serif text-2xl sm:text-5xl text-[#121814] font-normal leading-snug">
+              The crew who plant your space are the crew who look after it.
+            </h2>
+            <p className="text-xs sm:text-base text-[#475E50] leading-relaxed">
+              We do not outsource execution to casual day-laborers. Star Gardens employs a dedicated, full-time workforce of trained horticulturists, irrigation mechanics, and uniform-clad gardeners.
+            </p>
+            <ul className="space-y-3.5 text-xs sm:text-sm text-[#475E50]">
+              <li className="flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#193D2B] shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-[#121814]">Background-Verified:</strong> Full security clearances for tech parks and enterprise campuses.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#193D2B] shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-[#121814]">Trained Specialists:</strong> Continuous training in organic pest care and sub-irrigation.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-[#193D2B] shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-[#121814]">Dedicated Coordinator:</strong> Single point of contact for service schedules and digital reports.
+                </span>
+              </li>
+            </ul>
+
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#193D2B] text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-[#286746] transition-all transform active:scale-95 shadow-md shadow-[#193D2B]/15"
+              >
+                <span>Schedule Studio Meeting</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
